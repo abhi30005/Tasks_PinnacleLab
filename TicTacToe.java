@@ -4,7 +4,7 @@ import javax.swing.*;
 
 public class TicTacToe {
     int boardWidth = 600;
-    int boardHeight = 700; // Added height for scoreboard
+    int boardHeight = 700; 
     JFrame frame = new JFrame("Tic-Tac-Toe");
     JLabel textLabel = new JLabel();
     JLabel scoreLabel = new JLabel();
@@ -103,7 +103,6 @@ public class TicTacToe {
     }
 
     void checkWinner() {
-        // Horizontal
         for (int r = 0; r < 3; r++) {
             if (board[r][0].getText().equals("")) continue;
             if (board[r][0].getText().equals(board[r][1].getText()) &&
@@ -116,7 +115,6 @@ public class TicTacToe {
                 return;
             }
         }
-        // Vertical
         for (int c = 0; c < 3; c++) {
             if (board[0][c].getText().equals("")) continue;
             if (board[0][c].getText().equals(board[1][c].getText()) &&
@@ -129,7 +127,6 @@ public class TicTacToe {
                 return;
             }
         }
-        // Diagonal
         if (board[0][0].getText().equals(board[1][1].getText()) &&
             board[1][1].getText().equals(board[2][2].getText()) &&
             !board[0][0].getText().equals("")) {
@@ -140,7 +137,6 @@ public class TicTacToe {
             updateScore();
             return;
         }
-        // Anti-diagonal
         if (board[0][2].getText().equals(board[1][1].getText()) &&
             board[1][1].getText().equals(board[2][0].getText()) &&
             !board[0][2].getText().equals("")) {
